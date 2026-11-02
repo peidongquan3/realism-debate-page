@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>当代人更需要现实主义</title>
+  <meta name="description" content="反方辩题：当代人更需要现实主义——一辩立论稿" />
+  <style>
+    :root {
+      --bg: #09111d;
+      --bg-2: #101b2d;
+      --panel: rgba(17, 25, 39, 0.82);
+      --panel-strong: rgba(22, 34, 52, 0.95);
+      --line: rgba(255,255,255,0.12);
+      --text: #edf4ff;
+      --muted: #bfd0ef;
+      --accent: #8cd3ff;
+      --accent-2: #89f0c6;
+      --warning: #ffd89a;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(140, 211, 255, 0.14), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(137, 240, 198, 0.12), transparent 30%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(9, 17, 29, 0.5);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 68px;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.96rem;
+    }
+
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover { color: var(--text); }
+
+    .hero {
+      padding: 90px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -120px;
+      top: -30px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(140, 211, 255, 0.18), transparent 62%);
+      filter: blur(18px);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(137, 240, 198, 0.25);
+      background: rgba(137, 240, 198, 0.04);
+      color: var(--accent-2);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+    }
+
+    h1 {
+      margin: 22px 0 16px;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      font-size: 1.18rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    section {
+      padding: 32px 0;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 3vw, 32px);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .title {
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      line-height: 1.2;
+      margin: 0 0 18px;
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      color: var(--text);
+      font-size: 1.04rem;
+    }
+
+    .muted { color: var(--muted); }
+
+    .quote {
+      padding: 24px 22px;
+      border-left: 4px solid var(--accent);
+      background: rgba(140, 211, 255, 0.04);
+      border-radius: 14px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .point {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 16px;
+    }
+
+    .point-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #081320;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .point h3 {
+      margin: 0 0 10px;
+      font-size: 1.24rem;
+    }
+
+    .rebuttal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 18px;
+    }
+
+    .box {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    ul {
+      margin: 10px 0 0 22px;
+      padding: 0;
+      color: var(--text);
+    }
+
+    li + li { margin-top: 10px; }
+
+    .final {
+      padding: 28px 24px;
+      border-radius: 20px;
+      border: 1px solid rgba(137, 240, 198, 0.2);
+      background: linear-gradient(135deg, rgba(137, 240, 198, 0.08), rgba(140, 211, 255, 0.04));
+    }
+
+    .final p {
+      margin-bottom: 0;
+      font-size: 1.08rem;
+    }
+
+    footer {
+      padding: 28px 0 60px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .two-col,
+      .points,
+      .rebuttal {
+        grid-template-columns: 1fr;
+      }
+      .nav {
+        display: none;
+      }
+      .hero {
+        padding-top: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">现实主义</div>
+      <nav class="nav">
+        <a href="#立论">立论</a>
+        <a href="#论点">论点</a>
+        <a href="#质疑">质疑</a>
+        <a href="#结辩">结辩</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">反方一辩</div>
+        <h1>当代人更需要现实主义</h1>
+        <p class="subtitle">
+          我方认为，理想主义固然可贵，但在当下这个高度复杂、信息充斥、现实压力叠加的时代，真正需要的不是高远的空想，而是能够让人看清现实、应对现实、把握现实的现实主义。
+        </p>
+
+        <div class="meta">
+          <span class="chip">辩题：当代人更需要现实主义</span>
+          <span class="chip">立场：反方</span>
+          <span class="chip">一辩立论</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="立论">
+      <div class="container panel two-col">
+        <div>
+          <h2 class="title">一、开篇立论：现实主义不是消极，而是生存的底气</h2>
+          <p>
+            尊敬的主席、评委、对方辩友，今天我们站在反方，提出的观点并非否定理想主义的价值，而是强调：在当代社会中，真正让人能够稳稳站住的，不是“遥远的灯塔”，而是“脚下的道路”。
+          </p>
+          <p>
+            当代人面对的，是房租、学历、就业、家庭、情感、焦虑、竞争和不确定性。我们不是站在书本里空谈世界，而是站在现实中面对生活。我们没有办法不承认，很多人的人生不是由理想推着走，而是由现实拧着走。
+          </p>
+          <p>
+            所以，现实主义并不是“放弃理想”，它是对理想的最负责的态度。它告诉我们：想要变强，先看清现实；想要改变世界，先理解世界；想要实现梦想，先拼尽全力，不被幻想带偏。
+          </p>
+        </div>
+        <div class="quote">
+          <strong>一句话概括：</strong><br />
+          理想主义给人方向，现实主义给人方法；当代社会最需要的，不是天真的激情，而是脚踏实地的力量。
+        </div>
+      </div>
+    </section>
+
+    <section id="论点">
+      <div class="container">
+        <h2 class="title">二、核心论点：现实主义比理想主义更适合当代社会</h2>
+
+        <div class="points">
+          <div class="point">
+            <div class="point-number">1</div>
+            <h3>现实比理想更残酷，也更真实</h3>
+            <p class="muted">
+              当代人并不缺乏梦想，而是缺乏对现实的准确认知。很多痛苦并不是因为没有理想，而是因为理想和现实脱节。我们看到的不是“只要努力就成功”，而是“努力可能失败，竞争可能无情，资源可能有限”。
+            </p>
+          </div>
+
+          <div class="point">
+            <div class="point-number">2</div>
+            <h3>现实主义让人有能力生活，而不是只会幻想</h3>
+            <p class="muted">
+              一个人如果只会用理想衡量世界，就很容易陷入失落、焦虑和价值错位。现实主义告诉我们，要接受现实的边界，才能在边界内开拓出真正属于自己的可能。它让人知道：我要先活下来，才能更有资格谈理想。
+            </p>
+          </div>
+
+          <div class="point">
+            <div class="point-number">3</div>
+            <h3>现实主义更具有时代适应性</h3>
+            <p class="muted">
+              当前时代的节奏快、变量多、信息碎片化，人很容易被情绪、舆论和短期刺激裹挟。这个时候，最重要的不是“高喊理想”，而是“看清现实、做出判断、稳住自己”。这才是时代所需的底层能力。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container panel">
+        <h2 class="title">三、现实主义是对个人的保护，也是对社会的负责</h2>
+        <p>
+          我们必须承认，理想主义具有感染力，它能让人有雄心、激情和追求；但它往往容易被表达成“理想越远越好”，却忽略现实条件。一个没有脚底下土地的理想，最终只能变成空洞的口号。
+        </p>
+        <p>
+          现实主义恰恰是在告诉人们：你不能高喊理想却拒绝现实，你不能逃避困难却假装自己很伟大。真正成熟的精神状态，不是盲目向往世界，而是能够在现实中建立秩序、保持清醒、做出有效行动。
+        </p>
+        <p>
+          一个国家需要理想，个人也需要理想，但真正支撑社会运转的，往往是现实主义的规则、制度、协作和执行力。因为社会不是靠幻想延续，而是靠现实中的制度和行动维持秩序。
+        </p>
+      </div>
+    </section>
+
+    <section id="质疑">
+      <div class="container">
+        <h2 class="title">四、对方质疑的回应：理想主义难道不重要吗？</h2>
+        <div class="rebuttal">
+          <div class="box">
+            <h3>质疑一：没有理想，人生就失去了方向</h3>
+            <p class="muted">
+              我方并不否认方向的重要。我们承认理想是精神上的灯塔，但我们强调：灯塔不能替代航程，而方向不能替代现实的航海能力。
+            </p>
+          </div>
+
+          <div class="box">
+            <h3>质疑二：现实主义会让人妥协，甚至堕落</h3>
+            <p class="muted">
+              这是一种误解。现实主义不是对现实低头，而是对现实有认知。它不是放弃梦想，而是让梦想从“遥远的宣言”变成“能执行的计划”。愿景需要现实作为落地基础，否则只能沦为幻觉。
+            </p>
+          </div>
+
+          <div class="box">
+            <h3>质疑三：理想主义更能推动社会进步</h3>
+            <p class="muted">
+              进步不能只依靠热血，更要依靠制度、资源、协作和可行性。历史上真正推动社会改变的，不只是高喊理想的人，更是那些能够在现实中完成改革的人。
+            </p>
+          </div>
+
+          <div class="box">
+            <h3>质疑四：现实主义过于功利，会让人失去激情</h3>
+            <p class="muted">
+              激情不是用来替代认知的，而是建立在认知之上的。现实主义让人保持清醒，因此更容易持续、稳定地投入，真正地做事，而不是被一时冲动吞没。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="结辩">
+      <div class="container">
+        <div class="final">
+          <h2 class="title">五、结辩：当代人最需要的是“有能力活下去的清醒”，而不是“只会远眺的浪漫”</h2>
+          <p>
+            朋友们，理想主义让人看到远方，现实主义让人走到前方。我们的时代没有退路，只有高速变化、无尽竞争和难以预测的未来。此时最重要的，不是被“美好”冲昏头脑，而是用现实的眼光看世界，用理性的方式对待生活，用脚踏实地的行动成就明天。
+          </p>
+          <p>
+            所以，我们说：当代人更需要现实主义。因为现实主义不是冷漠，它是清醒；不是退步，它是成熟；不是没有梦想，它是把梦想放回现实的土壤里生长。真正能让人站得稳、活得久、做得成的，不是空想，而是现实主义。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    反方一辩 · 当代人更需要现实主义
+  </footer>
+</body>
+</html>
